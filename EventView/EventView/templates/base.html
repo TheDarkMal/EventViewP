@@ -8,26 +8,34 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>EventView</title>
+    
 </head>
 <center>
 <header>
         <nav class="navegacion">
                 <ul class="menu">
-                    <li><a href="{% url 'a' %}">INICIO</a></li>
-                    <li><a href="">ACADEMICOS</a></li>
+                    <li><a href="{% url 'inicio' %}">INICIO</a></li>
+                    <li><a href="{% url 'a' %}">ACADEMICOS</a></li>
                     <li><a href="">EMPRESARIALES</a></li>
                     <li><a href="">NOSOTROS</a></li>
                     {% if user.is_authenticated %}
                     <li><a href="#">{{ user.username }}</a>
                         {% else %}
-                    <li><a href="#">INICIAR SESION</a>
+                    <li><a href="{% url 'login' %}">INICIAR SESION</a>
                         {% endif %}
-    
+                        {% if user.is_authenticated %}
+                        <ul class="submenu">
+                            <li><a href="{% url 'logout' %}">Cerrar secion</a></li>
+                            <li><a href="#">HOLA</a></li>
+                            <li><a href="#">HOLA</a></li>
+                        </ul>
+                        {% else %}
                         <ul class="submenu">
                             <li><a href="#">HOLA</a></li>
                             <li><a href="#">HOLA</a></li>
                             <li><a href="#">HOLA</a></li>
                         </ul>
+                        {% endif %}
                     </li>
                 </ul>
             </nav>
@@ -42,5 +50,10 @@
     <h1>hola</h1>
 
     {% endblock %}
+
+    <footer >
+
+
+    </footer>
 </body>
 </html>
