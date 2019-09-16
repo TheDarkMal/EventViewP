@@ -10,7 +10,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin #esto es el control pa
 def cargar_inicio(request):
     return render(request, "EventViewApp/index.html")
 
-def a(request):
-    return render(request,"EventViewApp/a.html")
+def politicas(request):
+    return render(request,"EventViewApp/politicas.html")
 
 

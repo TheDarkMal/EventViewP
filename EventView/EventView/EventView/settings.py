@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql'    ,
         'NAME': 'EventView',
         'USER': 'root',
-        'PASSWORD': 'cbn2016',
+        'PASSWORD': '',
         'HOST': 'localhost',
     }
 }
@@ -129,3 +129,5 @@ STATICFILES_DIRS = [
 ]
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = 'login'
+LOGOUT_REDIRECT_URL = '/'
+LOGOUT_URL = 'logouts'
