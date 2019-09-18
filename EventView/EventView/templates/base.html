@@ -51,14 +51,44 @@
 
 
     {% block principal %}
-    <center><h1>Tus Eventos de paiwitas favoritos</h1></center><br>
+    <center><h1>Tus Eventos favoritos</h1></center><br>
+    
 
+
+    <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : '2387527174834909',
+            xfbml      : true,
+            version    : 'v4.0'
+          });
+          FB.AppEvents.logPageView();
+        };
+      
+        (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement(s); js.id = id;
+           js.src = "https://connect.facebook.net/en_US/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
+      </script>
+
+        <div
+        class="fb-like"
+        data-share="true"
+        data-width="450"
+        data-show-faces="true">
+        </div>
     {% endblock %}
 
-    <footer >
 
 
-    </footer>
 </div>
 </body>
+<footer >
+
+
+</footer>
+
 </html>
